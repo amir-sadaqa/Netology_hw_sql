@@ -1,3 +1,4 @@
+-- Задание 1
 -- Обновление типа данных в таблице Track: замена типа данных с decimal на integer (в секундах)
 ALTER TABLE track ALTER COLUMN track_length TYPE integer
 ;
@@ -44,6 +45,12 @@ INSERT INTO album(album_id, album_name, album_year)
 INSERT INTO album(album_id, album_name, album_year)
      VALUES (5, 'Overexposed', 2012)
 ;
+INSERT INTO album(album_id, album_name, album_year)
+     VALUES (6, 'Meminem', 2019)
+;
+INSERT INTO album(album_id, album_name, album_year)
+     VALUES (8, 'Break', 2020)
+;
 
 -- Таблица треков
 INSERT INTO track(track_id, album_id, track_name, track_length)
@@ -63,6 +70,24 @@ INSERT INTO track(track_id, album_id, track_name, track_length)
 ;
 INSERT INTO track(track_id, album_id, track_name, track_length)
      VALUES(6, 5, 'Daylight', 226)
+;
+INSERT INTO track(track_id, album_id, track_name, track_length)
+     VALUES(8, 5, 'Say goodbye to your mind', 110)
+;
+UPDATE track SET track_name = 'Say goodbye to my mind'
+ where track_id = 8
+;
+INSERT INTO track(track_id, album_id, track_name, track_length)
+     VALUES(7, 3, 'Мой Додыр', 120)
+;
+INSERT INTO track(track_id, album_id, track_name, track_length)
+     VALUES(9, 6, 'track_1', 126)
+;
+INSERT INTO track(track_id, album_id, track_name, track_length)
+     VALUES(10, 6, 'track_2', 130)
+;
+INSERT INTO track(track_id, album_id, track_name, track_length)
+     VALUES(11, 8, 'track_track', 135)
 ;
 
 -- Таблица сборников
@@ -89,6 +114,28 @@ INSERT INTO album_performer(album_performer_id, album_id, performer_id)
 INSERT INTO album_performer(album_performer_id, album_id, performer_id)
      VALUES(3, 1, 1)
 ;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(4, 4, 2)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(5, 1, 4)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(6, 2, 4)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(5, 1, 4)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(6, 5, 3)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(7, 6, 2)
+;
+INSERT INTO album_performer(album_performer_id, album_id, performer_id)
+     VALUES(8, 8, 1)
+;
+
 
 -- Таблица связи исполнителей с жанрами
 INSERT INTO performer_genre(performer_genre_id, performer_id, genre_id)
